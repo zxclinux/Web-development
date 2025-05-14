@@ -4603,3 +4603,10 @@
 /server/node_modules/yallist/README.md
 /server/node_modules/yallist/yallist.js
 /server/node_modules/.package-lock.json
+/.idea/.gitignore
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/vcs.xml
+/.idea/Web-development.iml
