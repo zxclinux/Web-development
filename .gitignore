@@ -1,3 +1,6 @@
+server/node_modules
+server/.idea/
+.idea
 /server/node_modules/.bin/detect-libc
 /server/node_modules/.bin/detect-libc.cmd
 /server/node_modules/.bin/detect-libc.ps1
