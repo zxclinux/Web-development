@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Добавить новый тип</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body class="header">
+    <header class="global-header">
+      <a href="catalog.html" class="logo">BuyDevice</a>
+      <nav>
+        <a href="admin.html" class="admin">Admin</a>
+        <a href="cart.html" class="cart" title="Cart"></a>
+        <div class="logout">Logout</div>
+      </nav>
+    </header>
+
+    <!-- Контейнер формы -->
+    <main class="full-height">
+      <div class="container" style="max-width: 400px">
+        <h1>Add new type</h1>
+        <form action="/api/type" method="POST">
+          <div class="form-group">
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              placeholder="Insert name..."
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Add new product</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body class="header">
+    <header class="global-header">
+      <a href="catalog.html" class="logo">BuyDevice</a>
+      <nav>
+        <a href="admin.html" class="admin">Admin</a>
+        <a href="cart.html" class="cart" title="Cart"></a>
+        <div class="logout">Logout</div>
+      </nav>
+    </header>
+
+    <main class="full-height">
+      <div class="container" style="max-width: 500px">
+        <h1>Add new product</h1>
+
+          <div class="form-group">
+            <input
+              type="text"
+              name="type"
+              class="form-control"
+              placeholder="Insert type..."
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <input
+              type="text"
+              name="brand"
+              class="form-control"
+              placeholder="Insert brand..."
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              placeholder="Insert name..."
+              required
+            />
+          </div>
+
+          <div
+            class="form-group"
+            style="display: flex; gap: 0.5rem; flex-wrap: wrap"
+          >
+            <input
+              type="text"
+              name="infoTitle"
+              class="form-control"
+              placeholder="Description name..."
+            />
+            <input
+              type="text"
+              name="infoDesc"
+              class="form-control"
+              placeholder="Insert info..."
+            />
+            <button
+              type="button"
+              class="btn btn-primary"
+            >
+              Add description
+            </button>
+          </div>
+
+          <div
+            class="form-group"
+            style="display: flex; align-items: center; gap: 1rem"
+          >
+            <button type="button" class="btn btn-primary" style="flex: 1">
+              Upload file
+            </button>
+            <span>Not uploaded</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
