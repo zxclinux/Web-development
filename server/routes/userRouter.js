@@ -9,4 +9,6 @@ router.post("/login", userController.login);
 router.get("/auth", authMiddleware, userController.check);
 router.post("/logout", authMiddleware, userController.logout);
 router.get('/all', checkRole('ADMIN'), userController.getAll);
+router.delete('/:id', checkRole('ADMIN'), userController.delete);
+
 module.exports = router;
