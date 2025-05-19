@@ -48,6 +48,29 @@ class UserController {
   async logout(req, res, next) {
     return res.json({ message: "Logged out successfully" });
   }
+  async getAll(req, res, next) {
+    try {
+      const users = await User.findAll({
+        attributes: ['id', 'email', 'role', 'createdAt', 'updatedAt']
+      });
+      return res.json(users);
+    } catch (e) {
+      return next(ApiError.internal('Failed to fetch users'));
+    }
+  }
+  async delete(req, res, next) {
+  try {
+    const { id } = req.params;
+    const user = await User.findByPk(id);
+    if (!user) {
+      return next(ApiError.notFound('User not found'));
+    }
+    await user.destroy();
+    return res.json({ message: 'User deleted' });
+  } catch (e) {
+    return next(ApiError.internal('Failed to delete user'));
+  }
+}
 }
 
 module.exports = new UserController();
