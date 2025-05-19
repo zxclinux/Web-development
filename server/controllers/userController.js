@@ -48,6 +48,16 @@ class UserController {
   async logout(req, res, next) {
     return res.json({ message: "Logged out successfully" });
   }
+  async getAll(req, res, next) {
+    try {
+      const users = await User.findAll({
+        attributes: ['id', 'email', 'role', 'createdAt', 'updatedAt']
+      });
+      return res.json(users);
+    } catch (e) {
+      return next(ApiError.internal('Failed to fetch users'));
+    }
+  }
 }
 
 module.exports = new UserController();
