@@ -61,6 +61,50 @@ class DeviceController {
         )
         return res.json(device)
     }
+
+    async update(req, res, next) {
+    try {
+      const { id } = req.params;
+      const { name, price, brandId, typeId, info } = req.body;
+      let updatedFields = { name, price, brandId, typeId };
+
+      Object.keys(updatedFields).forEach(
+        (key) => updatedFields[key] === undefined && delete updatedFields[key]
+      );
+
+      if (req.files && req.files.img) {
+        const { img } = req.files;
+        const fileName = uuid.v4() + ".jpg";
+        img.mv(path.resolve(__dirname, "..", "static", fileName));
+        updatedFields.img = fileName;
+      }
+
+      await Device.update(updatedFields, { where: { id } });
+
+      if (info) {
+        const parsedInfo = typeof info === "string" ? JSON.parse(info) : info;
+
+        await DeviceInfo.destroy({ where: { deviceId: id } });
+
+        parsedInfo.forEach(async (i) => {
+          await DeviceInfo.create({
+            title: i.title,
+            description: i.description,
+            deviceId: id,
+          });
+        });
+      }
+
+      const updatedDevice = await Device.findOne({
+        where: { id },
+        include: [{ model: DeviceInfo, as: "info" }],
+      });
+
+      return res.json(updatedDevice);
+    } catch (e) {
+      next(ApiError.badRequest(e.message));
+    }
+  }
 }
 
 module.exports = new DeviceController()
