@@ -1,0 +1,22 @@
+@mixin transition($prop: all, $time: 0.3s, $func: ease) {
+  transition: $prop $time $func;
+}
+
+@mixin button-base {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  @include transition(background-color);
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin rounded-btn($height: 4rem, $radius: 2rem) {
+  height: $height;
+  border-radius: $radius;
+}
