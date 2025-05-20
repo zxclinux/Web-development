@@ -24,3 +24,11 @@ npm i
 npx eslint src --fix
 npm run lint(not required)
 npm start</code>
+
+For Lab_5 Unit testing:  
+<code>cd client
+npm i
+npx eslint src --fix
+npm run lint(not required)
+npm run coverage:unit(testing)
+npm start</code>
