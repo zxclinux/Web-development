@@ -28,7 +28,8 @@ function AddDevicePage() {
     setFile(e.target.files[0]);
   };
 
-  const handleAddInfo = () => {
+  const handleAddInfo = (e) => {
+    e.preventDefault();
     setInfo([...info, { title: "", description: "", id: Date.now() }]);
   };
 
@@ -46,6 +47,11 @@ function AddDevicePage() {
     e.preventDefault();
     setMessage("");
     setSuccess(false);
+    if (!name || !price || !brandId || !typeId || !file) {
+      setMessage("Failed to add device");
+      setSuccess(false);
+      return;
+    }
     try {
       const formData = new FormData();
       formData.append("name", name);
@@ -156,7 +162,7 @@ function AddDevicePage() {
           </div>
           <div className="info-list">
             <button
-              type="submit"
+              type="button"
               className="btn btn--primary"
               onClick={handleAddInfo}
             >

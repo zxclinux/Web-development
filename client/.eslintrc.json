@@ -4,14 +4,8 @@
     "es6": true,
     "jest": true
   },
-  "extends": [
-    "airbnb-base",
-    "plugin:react/recommended"
-  ],
-  "plugins": [
-    "react",
-    "react-hooks"
-  ],
+  "extends": ["airbnb-base", "plugin:react/recommended"],
+  "plugins": ["react", "react-hooks"],
   "parser": "@babel/eslint-parser",
   "parserOptions": {
     "ecmaVersion": 2020,
@@ -43,9 +37,8 @@
         "ignorePropertyModificationsFor": ["liElem", "btnElem"]
       }
     ],
-    "no-empty": [
-    "error",
-    { "allowEmptyCatch": true }
-  ]
+    "no-empty": ["error", { "allowEmptyCatch": true }],
+    "no-return-assign": "off",
+    "no-promise-executor-return": "off"
   }
 }
