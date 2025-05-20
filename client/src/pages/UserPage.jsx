@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import UserList from "../components/UserList";
 import { fetchUsers, deleteUser } from "../api/user";
+import { useNavigate } from "react-router-dom";
 
 function UserPage() {
+  const navigate = useNavigate();
   const [users, setUsers] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
