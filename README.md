@@ -5,7 +5,8 @@ docker-compose up -d
 npm run dev</code>  
 
 For Lab_1 with static pages:  
-<code>https://zxclinux.github.io/Web-development/catalog.html.</code>
+<code>https://zxclinux.github.io/Web-development/catalog.html
+sass scss/main.scss css/main.css --no-source-map</code>
 
 For Lab_2 with pure js:  
 <code>cd Lab_2_Pure_JS
